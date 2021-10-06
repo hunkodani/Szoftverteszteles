@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.core.exceptions.AjtokSzamaNemMegfelelo;
+
 public class Auto implements HanggalRendelkezo {
 	public static Map<String, Integer> hengerurtartalomErtekek;
 
@@ -125,7 +127,10 @@ public class Auto implements HanggalRendelkezo {
 		return ajtokSzama;
 	}
 
-	protected void setAjtokSzama(int ajtokSzama) {
+	protected void setAjtokSzama(int ajtokSzama) throws AjtokSzamaNemMegfelelo {
+		if (ajtokSzama < 0 || ajtokSzama > 5){
+			throw new AjtokSzamaNemMegfelelo(ajtokSzama);
+		}
 		this.ajtokSzama = ajtokSzama;
 	}
 
@@ -145,6 +150,10 @@ public class Auto implements HanggalRendelkezo {
 		this.valto = valto;
 		this.kivitel = kivitel;
 		this.ajtokSzama = ajtokSzama;
+	}
+
+	public Auto() {
+		// TODO Auto-generated constructor stub
 	}
 
 }
