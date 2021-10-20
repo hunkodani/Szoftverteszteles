@@ -1,16 +1,10 @@
 package org.core;
 
-import static org.junit.Assert.*;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.core.exceptions.AjtokSzamaNemMegfelelo;
-import org.core.exceptions.GyartasiIdoNemMegfelelo;
 import org.core.exceptions.RendszamNemMegfelelo;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -20,8 +14,8 @@ import org.junit.runners.Parameterized.Parameters;
 public class AutoRendszamTest {
 	
 	@Parameters
-	public static Collection data() {
-		List data = new ArrayList();
+	public static Collection<String> data() {
+		List<String> data = new ArrayList<String>();
 		data.add("AAAA-123");
 		data.add("AAA123");
 		data.add("aaa123");
